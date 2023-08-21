@@ -1,0 +1,120 @@
+:root {
+    /* colors */
+    --primary-color : #302E44;
+    --secondary-color : #23E59F;
+    --tertiary-color : #F5F5F5;
+    --white : #FFFFFF;
+    --black : #000000;
+
+    /* font */
+    font-family: 'Montserrat', sans-serif;
+    line-height: 150%;
+    /* size */
+    --font-size-xl : 40px;
+    --font-size-l : 30px;
+    --font-size-m : 20px;
+    --font-size-s : 14px;
+    --font-size-xs : 12px;
+}
+
+/* ______________ GENERAL ______________ */
+
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    color : var(--primary)
+}
+
+body {
+    width: 100%;
+}
+
+/* FONT */
+h1 {
+    font-weight: 700;
+    font-size: clamp(1.25rem, 0.8929rem + 1.7857vw, 2.5rem);
+}
+h2 {
+    font-weight: 700;
+    font-size: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem);
+}
+p {
+    font-weight: 400;
+    font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
+}
+a {
+
+}
+
+/* Button */
+button {
+    color: var(--primary-color);
+    font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
+    padding : 20px;
+    border-radius : 5px;
+}
+
+.button--primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+.button--secondary {
+    background-color: var(--secondary-color);
+}
+.button--tertiary{
+    background-color: #FFFFFF;
+    color: var(--white);
+}
+.button--outline-dark {
+    border: solid 1px var(--primary-color);
+}
+.button--outline-light {
+    border: solid 1px #FFFFFF;
+}
+
+/* input */
+
+input {}
+
+input:focus {}
+
+input:active {}
+
+/* container */
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+section.container {
+    margin: 0 25px;
+}
+
+/* SMALL devices : mobiles  */
+
+
+
+/* ----------------------> MEDIA QUERIES <---------------------- */
+
+/* MEDIUM devices : tab 768px */
+
+@media screen and (min-width: 768px) {}
+
+/* BIG devices : laptop & desktop */
+
+@media screen and (min-width: 1024px) {
+
+    /* ______________ GENERAL ______________ */
+
+    /* container */
+
+    section.container {
+        margin: 0 70px;
+    }
+
+}
+
+
