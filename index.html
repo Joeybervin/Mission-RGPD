@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="./style.css">
     <!-- Font (GOOGLE FONT : montserrat) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Icon -->
     <link rel="icon" type="image/png" href="./assets/rgpd-logo.png">
     <!-- Title -->
@@ -18,9 +18,281 @@
 
 </head>
 <body>
-    <h1>Hello World!</h1>
-    
+    <div class="main-container">
+        <header>
+            <!-- navigation desktop-->
+            <nav id="navigation--desktop">
+                <div>
+                    <!-- Left side -->
+                    <div class="nav__container--left">
+                        <div>
+                            <a href="#">Faire mon diagnostic RGPD</a>
+                            <a href="#">Calculer mes économies</a>
+                        </div>
+                        <ul>
+                            <li class="menu-desktop-solutions">
+                                Solutions
+                                <img src="./assets/icon_chevron-down-secondary.svg" alt="">
+                                <div class="submenu-desktop submenu-desktop-solutions">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <p>Centre de formation</p>
+                                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p>Campings</p>
+                                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p>Associations</p>
+                                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p>Ressources Humaines</p>
+                                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <p>Experts comptables</p>
+                                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p>E-commerce</p>
+                                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p>Immobilier</p>
+                                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p>Conseil</p>
+                                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                Services
+                                <img src="./assets/icon_chevron-down-secondary.svg" alt="">
+                            </li>
+                            <li>
+                                Entreprise
+                                <img src="./assets/icon_chevron-down-secondary.svg" alt="">
+                            </li>
+                            <li>
+                                Ressources
+                                <img src="./assets/icon_chevron-down-secondary.svg" alt="">
+                            </li>
+                            <li>
+                                Blog
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- center -->
+                    <img class="nav__logo" src="./assets/rgpd-logo.png" alt="">
+                    <!-- right side -->
+                    <div class="nav__container--right">
+                        <div>
+                            <div>
+                                <a href="mailto:?">Contactez-nous</a>
+                                <a href="tel:+33255993291">02 55 99 32 91</a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <img src="./assets/icon _linkedin.png" alt="linkedin" title="notre linkedin">
+                                </a>
+                                <a href="#">Se connecter</a>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="button--small button--outline-dark">Essai gratuit</button>
+                            <button type="button" class="button--small button--secondary">Demander une démo</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
 
+            <nav id="navigation--mobile">
+                <!-- logo -->
+                <img src="./assets/rgpd-logo.png" alt="">
+                <!-- toggle navigation menu -->
+                <div>
+                    <!-- burger menu -->
+                    <svg id="burger-menu" viewBox="0 0 100 80" width="21" height="20">
+                        <rect width="100" height="12" rx="8" fill="#2F2E41"></rect>
+                        <rect y="30" width="100" height="12" rx="8" fill="#2F2E41"></rect>
+                        <rect y="60" width="100" height="12" rx="8" fill="#2F2E41"></rect>
+                    </svg>
+                    <!-- close menu -->
+                    <svg id="close-menu" class="close" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                        <rect x="2.54492" width="25" height="2.5" rx="1.25" transform="rotate(45 2.54492 0)" fill="#2F2E41"/>
+                        <rect x="20.2227" y="1.76782" width="25" height="2.5" rx="1.25" transform="rotate(135 20.2227 1.76782)" fill="#2F2E41"/>
+                    </svg>
+                </div>
+
+                <!-- MENU -->
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <p>Solutions</p>
+                            <img src="./assets/icon_chevron-right.png" alt="">
+                        </li>
+                        <li>
+                            <p>Services</p>
+                            <img src="./assets/icon_chevron-right.png" alt="">
+                        </li>
+                        <li>
+                            <p>Entreprise</p>
+                            <img src="./assets/icon_chevron-right.png" alt="">
+                        </li>
+                        <li>
+                            <p>Ressources</p>
+                            <img src="./assets/icon_chevron-right.png" alt="">
+                        </li>
+                        <li>
+                            <p>Blog</p>
+                        </li>
+                        <li>
+                            <p>Contact</p>
+                        </li>
+                        <li>
+                            <p>Faire mon diagnostic</p>
+                        </li>
+                        <li>
+                            <p>Calculer vos économies</p>
+                        </li>
+                    </ul>
+                    <div>
+                        <button type="button" class="button--outline-light">Essai gratuit</button>
+                        <button type="button" class="button--secondary">Demander une démo</button>
+                    </div>
+                    <!-- login -->
+                    <a href="#">Se connecter</a>
+                </div>
+
+                <!-- SUBMENU(S) -->
+                <div class="submenu-mobile submenu-mobile-0 close">
+                    <div class="go-back">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
+                            <path d="M5.0625 1L1 5.5M1 5.5L5.0625 10M1 5.5H21" stroke="white" stroke-linecap="round"/>
+                        </svg>
+                        <p>Retour</p>
+                    </div>
+                    <p></p>
+                    <ul>
+                        <li><a href="#">La solution Mission RGPD</a></li>
+                        <li><a href="#">Centre de formation</a></li>
+                        <li><a href="#">Exprets comptables</a></li>
+                        <li><a href="#">Campings</a></li>
+                        <li><a href="#">E-commerce</a></li>
+                        <li><a href="#">Associations</a></li>
+                        <li><a href="#">Immobilier</a></li>
+                        <li><a href="#">Ressources Humaines</a></li>
+                        <li><a href="#">Conseil</a></li>
+                    </ul>
+
+                </div>
+                <div class="submenu-mobile submenu-mobile-1 close">
+                    <div class="go-back">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
+                            <path d="M5.0625 1L1 5.5M1 5.5L5.0625 10M1 5.5H21" stroke="white" stroke-linecap="round"/>
+                        </svg>
+                        <p>Retour</p>
+                    </div>
+                    <p></p>
+                </div>
+                <div class="submenu-mobile submenu-mobile-2 close">
+                    <div class="go-back">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
+                            <path d="M5.0625 1L1 5.5M1 5.5L5.0625 10M1 5.5H21" stroke="white" stroke-linecap="round"/>
+                        </svg>
+                        <p>Retour</p>
+                    </div>
+                    <p></p>
+                </div>
+                <div class="submenu-mobile submenu-mobile-3 close">
+                    <div class="go-back">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
+                            <path d="M5.0625 1L1 5.5M1 5.5L5.0625 10M1 5.5H21" stroke="white" stroke-linecap="round"/>
+                        </svg>
+                        <p>Retour</p>
+                    </div>
+                    <p></p>
+                </div>
+
+            </nav>
+
+
+            <!-- header content -->
+            <div class="section__container">
+                
+                <div>
+                    <!-- LEFT side -->
+                    <div>
+                        <h1></h1>
+                        <p></p>
+                        <div>
+                            <button></button>
+                            <div>
+                                <img src="" alt="">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- RIGHT side -->
+                    <img src="" alt="">
+                </div>
+
+                <div>
+                    <div>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <button type="button"></button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main__container" >
+            <section id="ours_prestations"></section>
+            <section id="our_mission"></section>
+            <section id="video"></section>
+            <section id="test_rgpd"></section>
+            <section id="testimony"></section>
+            <section id="questions"></section>
+            <section id="ours_articles"></section>
+            <section id="our_team"></section>
+            <section id="newsletter"></section>
+        </div>
+
+        <!-- Footer -->
+        <footer></footer>
+    </div>
     <!-- script -->
     <script src="./script.js"></script>
 </body>
