@@ -1,0 +1,70 @@
+/* ======= HEADER ======= */
+.header__container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.header__container--top {
+    position: relative;
+    max-height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap : 100px;
+    justify-content: center;
+    
+}
+.header__container--top::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    margin : 0;
+    padding: 0;
+    height: 0.5px;
+    width: 100vw;
+    background-color: #FFFFFF;
+}
+.header__container  p {
+    color: var(--white);
+}
+.header__container--top-left {
+    max-width: 522px;
+}
+.header__container--top-left > div {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.header__container--top-left > p {
+    margin-bottom: 30px;
+}
+.header__container--top-left > div div > a {
+    display: flex;
+    gap: 15px;
+}
+.header__container--top-left a > p {
+    font-weight: 700;
+    text-decoration: underline;
+}
+.header__container--bottom {
+    padding : 50px 0 ;
+    margin : 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 76%;
+}
+.header__container--bottom  > div  {
+    max-width: 137px;
+}
+.header__container--bottom  > div:nth-child(2)  {
+    max-width: 125px;
+}
+.header__container--bottom  > div p:first-of-type {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+}
+.header__container--bottom  > div p:last-of-type {
+    line-height: 17px;
+}
