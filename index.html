@@ -19,11 +19,14 @@
 </head>
 <body>
     <div class="main-container">
+
+        <!-- SECTION : HEADER -->
         <header>
-            <!-- navigation desktop-->
+            <!-- PART : NAVIGATION -->
+                <!-- desktop navigation-->
             <nav id="navigation--desktop">
                 <div>
-                    <!-- Left side -->
+                    <!-- left side -->
                     <div class="nav__container--left">
                         <div>
                             <a href="#">Faire mon diagnostic RGPD</a>
@@ -31,8 +34,9 @@
                         </div>
                         <ul>
                             <li class="menu-desktop-solutions">
-                                Solutions
+                                <p>Solutions</p>
                                 <img src="./assets/icon_chevron-down-secondary.svg" alt="">
+                                <!-- submenu -->
                                 <div class="submenu-desktop submenu-desktop-solutions">
                                     <ul>
                                         <li>
@@ -89,58 +93,69 @@
                                 </div>
                             </li>
                             <li>
-                                Services
+                                <p>Services</p>
                                 <img src="./assets/icon_chevron-down-secondary.svg" alt="">
+                                <!-- submenu -->
+                                <!-- <div class="submenu-desktop submenu-desktop-services"></div> -->
                             </li>
                             <li>
-                                Entreprise
+                                <p>Entreprise</p>
                                 <img src="./assets/icon_chevron-down-secondary.svg" alt="">
+                                <!-- submenu -->
+                                <!-- <div class="submenu-desktop submenu-desktop-entreprise"></div> -->
                             </li>
                             <li>
-                                Ressources
+                                <p>Ressources</p>
                                 <img src="./assets/icon_chevron-down-secondary.svg" alt="">
+                                <!-- submenu -->
+                                <!-- <div class="submenu-desktop submenu-desktop-ressources"></div> -->
                             </li>
                             <li>
-                                Blog
+                                <a href="#">
+                                    <p>Blog</p>
+                                </a>
                             </li>
                         </ul>
                     </div>
-                    <!-- center -->
+                    <!-- center (logo) -->
                     <img class="nav__logo" src="./assets/rgpd-logo.png" alt="">
                     <!-- right side -->
                     <div class="nav__container--right">
                         <div>
+                            <!-- contact (mail + phone) -->
                             <div>
                                 <a href="mailto:?">Contactez-nous</a>
                                 <a href="tel:+33255993291">02 55 99 32 91</a>
                             </div>
                             <div>
                                 <a href="#">
-                                    <img src="./assets/icon _linkedin.png" alt="linkedin" title="notre linkedin">
+                                    <!-- linkedin link -->
+                                    <img src="./assets/icon _linkedin.png" alt="linkedin" title="linkedin">
                                 </a>
+                                <!-- login -->
                                 <a href="#">Se connecter</a>
                             </div>
                         </div>
                         <div>
-                            <button type="button" class="button--small button--outline-dark">Essai gratuit</button>
-                            <button type="button" class="button--small button--secondary">Demander une démo</button>
+                            <a href="#" class="button button--small button--outline-dark">Essai gratuit</a>
+                            <a href="#" class="button button--small button--secondary">Demander une démo</a>
                         </div>
                     </div>
                 </div>
             </nav>
-
+                <!-- desktop navigation-->
             <nav id="navigation--mobile">
                 <!-- logo -->
                 <img src="./assets/rgpd-logo.png" alt="">
                 <!-- toggle navigation menu -->
                 <div>
-                    <!-- burger menu -->
-                    <svg id="burger-menu" viewBox="0 0 100 80" width="21" height="20">
+                    <!-- open menu : burger menu icon -->
+                    <svg title="menu" id="burger-menu" viewBox="0 0 100 80" width="21" height="20">
                         <rect width="100" height="12" rx="8" fill="#2F2E41"></rect>
                         <rect y="30" width="100" height="12" rx="8" fill="#2F2E41"></rect>
                         <rect y="60" width="100" height="12" rx="8" fill="#2F2E41"></rect>
                     </svg>
-                    <!-- close menu -->
+                    <!-- close menu : cross icon -->
                     <svg id="close-menu" class="close" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
                         <rect x="2.54492" width="25" height="2.5" rx="1.25" transform="rotate(45 2.54492 0)" fill="#2F2E41"/>
                         <rect x="20.2227" y="1.76782" width="25" height="2.5" rx="1.25" transform="rotate(135 20.2227 1.76782)" fill="#2F2E41"/>
@@ -180,8 +195,8 @@
                         </li>
                     </ul>
                     <div>
-                        <button type="button" class="button--outline-light">Essai gratuit</button>
-                        <button type="button" class="button--secondary">Demander une démo</button>
+                        <a href="#" class="button button--outline-light">Essai gratuit</a>
+                        <a href="#" class="button button--secondary">Demander une démo</a>
                     </div>
                     <!-- login -->
                     <a href="#">Se connecter</a>
@@ -189,58 +204,81 @@
 
                 <!-- SUBMENU(S) -->
                 <div class="submenu-mobile submenu-mobile-0 close">
+                    <!-- go back to the menu principal -->
                     <div class="go-back">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
                             <path d="M5.0625 1L1 5.5M1 5.5L5.0625 10M1 5.5H21" stroke="white" stroke-linecap="round"/>
                         </svg>
                         <p>Retour</p>
                     </div>
+                    <!-- submenu title -->
                     <p></p>
                     <ul>
-                        <li><a href="#">La solution Mission RGPD</a></li>
-                        <li><a href="#">Centre de formation</a></li>
-                        <li><a href="#">Exprets comptables</a></li>
-                        <li><a href="#">Campings</a></li>
-                        <li><a href="#">E-commerce</a></li>
-                        <li><a href="#">Associations</a></li>
-                        <li><a href="#">Immobilier</a></li>
-                        <li><a href="#">Ressources Humaines</a></li>
-                        <li><a href="#">Conseil</a></li>
+                        <li>
+                            <a href="#">La solution Mission RGPD</a>
+                        </li>
+                        <li>
+                            <a href="#">Centre de formation</a>
+                        </li>
+                        <li>
+                            <a href="#">Exprets comptables</a>
+                        </li>
+                        <li>
+                            <a href="#">Campings</a>
+                        </li>
+                        <li>
+                            <a href="#">E-commerce</a>
+                        </li>
+                        <li>
+                            <a href="#">Associations</a>
+                        </li>
+                        <li>
+                            <a href="#">Immobilier</a>
+                        </li>
+                        <li>
+                            <a href="#">Ressources Humaines</a>
+                        </li>
+                        <li>
+                            <a href="#">Conseil</a>
+                        </li>
                     </ul>
-
                 </div>
                 <div class="submenu-mobile submenu-mobile-1 close">
+                    <!-- go back to the menu principal -->
                     <div class="go-back">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
                             <path d="M5.0625 1L1 5.5M1 5.5L5.0625 10M1 5.5H21" stroke="white" stroke-linecap="round"/>
                         </svg>
                         <p>Retour</p>
                     </div>
+                    <!-- submenu title -->
                     <p></p>
                 </div>
                 <div class="submenu-mobile submenu-mobile-2 close">
+                    <!-- go back to the menu principal -->
                     <div class="go-back">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
                             <path d="M5.0625 1L1 5.5M1 5.5L5.0625 10M1 5.5H21" stroke="white" stroke-linecap="round"/>
                         </svg>
                         <p>Retour</p>
                     </div>
+                    <!-- submenu title -->
                     <p></p>
                 </div>
                 <div class="submenu-mobile submenu-mobile-3 close">
+                    <!-- go back to the menu principal -->
                     <div class="go-back">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
                             <path d="M5.0625 1L1 5.5M1 5.5L5.0625 10M1 5.5H21" stroke="white" stroke-linecap="round"/>
                         </svg>
                         <p>Retour</p>
                     </div>
+                    <!-- submenu title -->
                     <p></p>
                 </div>
-
             </nav>
 
-
-            <!-- header content -->
+            <!-- PART : header content -->
             <div class="section__container">
                 
                 <div>
@@ -278,7 +316,7 @@
             </div>
         </header>
 
-        <div class="main__container" >
+        <main class="main__container" >
             <section id="ours_prestations"></section>
             <section id="our_mission"></section>
             <section id="video"></section>
@@ -288,9 +326,9 @@
             <section id="ours_articles"></section>
             <section id="our_team"></section>
             <section id="newsletter"></section>
-        </div>
+        </main>
 
-        <!-- Footer -->
+        <!-- FOOTER -->
         <footer></footer>
     </div>
     <!-- script -->

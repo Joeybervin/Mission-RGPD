@@ -70,7 +70,7 @@ li {
 }
 
 /* ______ BUTTON ______ */
-button {
+button, .button {
     font-family: 'Montserrat', sans-serif;
     color: var(--primary-color);
     font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
@@ -83,7 +83,8 @@ button:hover {
     cursor: pointer;
 }
 .button--small {
-    padding: 10px 20px;
+    font-size: clamp(0.75rem, 0.4423rem + 0.4808vw, 0.875rem);
+    padding: 10px;
     font-weight: 600;
 }
 
@@ -157,6 +158,11 @@ nav ul {
 nav#navigation--desktop {
     display: none;
 }
+nav#navigation--mobile {
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+}
 nav#navigation--mobile > img {
     position: absolute;
     left: 0;
@@ -179,6 +185,7 @@ nav#navigation--mobile > img {
     background-color: var(--primary-color);
     position: absolute;
     top:  var(--nav-height-mobile);
+    height: calc(100vh - var(--nav-height-mobile));
     width: 100%;
     padding: 21px 15px 0 18px;
     max-height: 0;
@@ -212,20 +219,16 @@ nav#navigation--mobile > img {
     gap: 15px;
     margin-bottom: 15px;
 }
-.menu a {
+.menu > a {
     font-weight: 400;
     text-decoration: underline;
     color: var(--white);
 }
-.menu a:hover , .menu a:focus {
+.menu > a:hover , .menu > a:focus {
     font-weight: 600;
 }
-.menu button {
+.menu a.button {
     padding: 15px;
-    max-width: 320px;;
-}
-.close {
-    display: none;
 }
 .submenu-mobile {
     z-index: 99;
@@ -240,7 +243,6 @@ nav#navigation--mobile > img {
 }
 .submenu-mobile li a, .submenu-mobile p, .submenu-mobile svg + p{
     color: var(--white);
-
 }
 .go-back {
     display: flex;
@@ -286,11 +288,6 @@ nav#navigation--mobile > img {
 @media screen and (min-width: 1024px) {
 
     /* ______________ GENERAL ______________ */
-
-    .button--small {
-        padding: 10px;
-        font-weight: 600;
-    }
     .section__container {
         margin: 0 71px;
     }
@@ -425,7 +422,6 @@ nav#navigation--mobile > img {
 
     .button--small {
         padding: 10px 20px;
-        font-weight: 600;
     }
 
     nav {
@@ -457,4 +453,10 @@ nav#navigation--mobile > img {
 
 
     
+}
+
+/* ----------------------> INTERRACTION CLASS <---------------------- */
+
+.close {
+    display: none;
 }
