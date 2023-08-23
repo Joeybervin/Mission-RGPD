@@ -11,6 +11,8 @@
     --nav-height-desktop : 132px;
 
     /* margin */
+    --margin-horizontal-desktop : 70px;
+    --margin-horizontal-mobile : 25px;
     
 
     /* typography */
@@ -69,10 +71,13 @@ h2 {
     font-weight: 700;
     font-size: clamp(1.25rem, 0.8929rem + 1.7857vw, 2.5rem);
     color: var(--primary-color);
+    margin-bottom: 15px;
+    line-height: 150%;
 }
 h3 {
     font-weight: 700;
     font-size: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem);
+    margin-top: 20px;
 }
 h2 > span {
     color: var(--secondary-color);
@@ -94,6 +99,8 @@ li {
             BUTTONS
 ================================= */
 button, .button {
+    display: block;
+    width: fit-content;
     font-family: 'Montserrat', sans-serif;
     color: var(--primary-color);
     font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
@@ -125,7 +132,7 @@ button:hover {
 }
 .button--tertiary{
     background-color: #FFFFFF;
-    color: var(--white);
+    color: var(--primary-color);
 }
 .button--outline-dark {
     background-color: transparent;
@@ -151,13 +158,28 @@ input:active {}
             CONTAINERS
 ================================= */
 
+/* ======= MAIN ======= */
+main {
+    position: relative;
+}
+main::before {
+    z-index: -99;
+    position: absolute;
+    content: '';
+    background-color: #F3F3F3;
+    right: 0;
+    top: 0;
+    width: 23%;
+    height: calc( 2 * 100vh)
+}
+
 section {
     width: 100%;
     height: 100vh;
 }
 
 .section__container {
-    margin: 0 25px;
+    margin: 0 var(--margin-horizontal-mobile);
     background-color: #23E59E2A;
 }
 
@@ -399,6 +421,80 @@ nav#navigation--mobile > img {
 /* =====================================
         SECTION : PREASTATIONS
 ======================================== */
+#ours_prestations > div {
+    position: relative;
+}
+#ours_prestations > div > div:first-child {
+    position: relative;
+    background-color: var(--white);
+    border-radius: 30px 30px 0 0;
+    padding: 101px 0 70px 0 ;
+    text-align: center;
+}
+#ours_prestations > div > div:first-child::before {
+    position: absolute;
+    top: -1px;
+    left: calc(var(--margin-horizontal-mobile) * -1);
+    content: '';
+    background-color: var(--primary-color);
+    width: 100vw;
+    height: 67%;
+    z-index: -1;
+}
+#ours_prestations > div > div > p {
+    margin: 0 auto;
+    max-width: 856px;
+}
+#ours_prestations  > div > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+}
+#ours_prestations  > div > div:last-child > div {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    background: var(--white);
+    padding: 30px 20px;
+    width: 100%;
+}
+#ours_prestations  > div > div:last-child > div > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    width: 70px;
+    height: 71px;
+}
+#ours_prestations  > div > div:last-child > div > div img {
+    width: fit-content;
+    height: auto;
+}
+#ours_prestations  > div > div:last-child > div:nth-child(2) {
+    border: none;
+    background: var(--primary-color);
+    color: var(--white);
+}
+#ours_prestations  > div > div:last-child > div:nth-child(2) > div {
+    background-color: var(--white);
+}
+#ours_prestations  > div > div:last-child > div p {
+    flex-grow: 1;
+    margin-top: 15px;
+    line-height: 150%;
+}
+#ours_prestations  > div > div:last-child > div:nth-child(2) p {
+    color: var(--white);
+    margin-top: 10px;
+}
+#ours_prestations  .button {
+    margin-top: 20px;
+    margin-bottom: 27px;
+}
 
 /* -----------------------------------------------------------------------------------------------------
                                     MEDIA QUERIES
@@ -409,7 +505,16 @@ nav#navigation--mobile > img {
 ----------------------------------------------------------------------------------------------------- */
 @media screen and (min-width: 768px) {
 
-    
+}
+
+@media screen and (min-width: 860px) {
+
+    #ours_prestations  > div > div:last-child {
+        flex-direction: row;
+    }
+    #ours_prestations  > div > div:last-child > div {
+        min-height: 487px;;
+    }
 }
 
 
@@ -428,8 +533,12 @@ nav#navigation--mobile > img {
     /* ==============================
             GENERAL
 ================================= */
+
+    h2 {
+        line-height: 50px;
+    }
     .section__container {
-        margin: 0 71px;
+        margin: 0 var(--margin-horizontal-desktop);
     }
 
     /* ==============================
@@ -605,6 +714,14 @@ nav#navigation--mobile > img {
         font-size: 30px;
         line-height: 30px;
     }
+
+    /* =====================================
+            SECTION : PREASTATIONS
+    ======================================== */
+    #ours_prestations > div > div:first-child::before {
+        left: calc(var(--margin-horizontal-desktop) * -1);
+    }
+    
 
 }
 
