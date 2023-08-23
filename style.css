@@ -92,13 +92,19 @@ a {
     text-decoration: none;
 }
 li {
+    color: var(--primary-color);
     line-height: 150%;
+    font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
+}
+li > span {
+    font-weight: 700;
 }
 
 /* ==============================
             BUTTONS
 ================================= */
 button, .button {
+    text-align: center;
     display: block;
     width: fit-content;
     font-family: 'Montserrat', sans-serif;
@@ -175,12 +181,12 @@ main::before {
 
 section {
     width: 100%;
-    height: 100vh;
 }
 
 .section__container {
     margin: 0 var(--margin-horizontal-mobile);
     background-color: #23E59E2A;
+    height: fit-content;
 }
 
 /* ======= HEADER ======= */
@@ -351,7 +357,7 @@ nav#navigation--mobile > img {
     justify-content: center;
 }
 .header__container--top > img {
-    min-width: 250px;
+    min-width: 200px;
     max-width: 45%;
 }
 .header__container--top::after {
@@ -419,7 +425,7 @@ nav#navigation--mobile > img {
 ================================= */
 
 /* =====================================
-        SECTION : PREASTATIONS
+        SECTION : PRESTATIONS
 ======================================== */
 #ours_prestations > div {
     position: relative;
@@ -495,6 +501,55 @@ nav#navigation--mobile > img {
     margin-top: 20px;
     margin-bottom: 27px;
 }
+/* =====================================
+        SECTION : OUR MISSION
+======================================== */
+#our_mission {
+    margin-top: 136px;
+    
+}
+#our_mission > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+#our_mission h2 {
+    margin-top: 71px;
+}
+#our_mission ul {
+    margin : 30px auto;
+}
+#our_mission ul li {
+
+    line-height: 30px;
+}
+#our_mission ul li::before {
+    content: "\2022"; 
+    color: var(--primary-color); 
+    font-size: 1em;
+    margin-right: 0.5em; 
+}
+#our_mission > div  div:last-of-type {
+    position: relative;
+    max-width: 524px;
+    min-width: 200px;
+    min-height: 350px;
+}
+#our_mission > div  div:last-of-type::before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    left : 0; 
+    background-color: #D9D9D9;
+    width: 100%;
+    height: 100%;
+}
+#our_mission div +  div > img {
+    max-width: 100%;
+    height: 100%;
+}
 
 /* -----------------------------------------------------------------------------------------------------
                                     MEDIA QUERIES
@@ -504,6 +559,19 @@ nav#navigation--mobile > img {
                                     MEDIUM DEVICES
 ----------------------------------------------------------------------------------------------------- */
 @media screen and (min-width: 768px) {
+    /* =====================================
+            SECTION : OUR MISSION
+    ======================================== */
+
+    #our_mission > div {
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: row;
+    }
+    #our_mission > div > div {
+        width: 47%;
+    }
+
 
 }
 
@@ -716,7 +784,7 @@ nav#navigation--mobile > img {
     }
 
     /* =====================================
-            SECTION : PREASTATIONS
+            SECTION : PRESTATIONS
     ======================================== */
     #ours_prestations > div > div:first-child::before {
         left: calc(var(--margin-horizontal-desktop) * -1);
