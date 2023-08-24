@@ -18,7 +18,20 @@
 
 </head>
 <body>
+            <!-- Modal -->
+    <div class="modal close">
+        <div class="modal__content">
+            <img src="./assets/team_member_1.png" alt="nom préom - Nom du poste">
+            <div>
+                <img src="./assets/icon_cross.svg" alt="fermer">
+                <img src="./assets/icon_quotes.svg" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p>Nom Prénom</p>
+            </div>
+        </div>
+    </div>
     <div class="main-container">
+
 
         <!-- SECTION : HEADER -->
         <header>
@@ -321,7 +334,7 @@
 
         <main class="main__container" >
             <!--PART :  PRESTATIONS -->
-            <section id="ours_prestations">
+            <section id="ours-prestations">
                 <div class="section__container">
                     <div>
                         <!-- title -->
@@ -361,7 +374,7 @@
             </section>
 
             <!--PART :  OUR MISSION -->
-            <section id="our_mission">
+            <section id="our-mission">
                 <div class="section__container">
                     <div>
                         <!-- section title -->
@@ -397,7 +410,7 @@
             </section>
 
             <!-- PART : TEST RGPD -->
-            <section id="test_rgpd">
+            <section id="test-rgpd">
                 <div class="section__container">
                     <div>
                         <h2>Testez Mission RGPD <br> grâce à notre <span>essai gratuit</span></h2>
@@ -411,7 +424,7 @@
 
             <!-- PART : CUSTOMERS TESTIMONY -->
             <!-- TODO : slider -->
-            <section id="customers_testimony">
+            <section id="customers-testimony">
                 <div class="section__container">
                     <!-- left side -->
                     <h2>Nos clients <br> témoignent</h2>
@@ -454,6 +467,7 @@
                             <div class="slider-progress-bar-bar"></div>
                         </div>
                     </div>
+
                     <img src="./assets/image_our_customers_testify.png" alt="">
                 </div>
             </section>
@@ -495,7 +509,7 @@
             </section>
 
             <!-- PART :  -->
-            <section id="ours_articles">
+            <section id="ours-articles">
                 <div class="section__container">
                     <h2>Découvrez nos derniers<br>articles sur le RGPD</h2>
                     <div>
@@ -545,21 +559,21 @@
                 <div class="section__container">
                     <h2>Notre équipe <span>d'experts</span></h2>
                     <div class="our-team__container our-team__container--top">
-                        <div>
+                        <div class="team-member">
                             <div>
                                 <img src="./assets/team_member_1.png" alt="Nom Prénom - Nom du poste">
                             </div>
                             <p>Nom Prénom</p>
                             <p>Nom du poste</p>
                         </div>
-                        <div>
+                        <div class="team-member">
                             <div>
                                 <img src="./assets/team_member_2.png" alt="Nom Prénom - Nom du poste">
                             </div>
                             <p>Nom Prénom</p>
                             <p>Nom du poste</p>
                         </div>
-                        <div>
+                        <div class="team-member">
                             <div>
                                 <img src="./assets/team_member_3.png" alt="Nom Prénom - Nom du poste">
                             </div>
@@ -568,21 +582,21 @@
                         </div>
                     </div>
                     <div class="our-team__container our-team__container--bottom">
-                        <div>
+                        <div class="team-member">
                             <div>
                                 <img src="./assets/team_member_6.png" alt="Nom Prénom - Nom du poste">
                             </div>
                             <p>Nom Prénom</p>
                             <p>Nom du poste</p>
                         </div>
-                        <div>
+                        <div class="team-member">
                             <div>
                                 <img src="./assets/team_member_5.png" alt="Nom Prénom - Nom du poste">
                             </div>
                             <p>Nom Prénom</p>
                             <p>Nom du poste</p>
                         </div>
-                        <div>
+                        <div class="team-member">
                             <div>
                                 <img src="./assets/team_member_4.png" alt="Nom Prénom - Nom du poste">
                             </div>
@@ -596,17 +610,17 @@
             <!-- PART : NEWSLETTER -->
             <section id="newsletter">
                 <div class="section__container">
-                    <form action="" method="post">
+                    <form action="#" method="post">
                         <h2>Inscrivez-vous <span>à notre newsletter.</span></h2>
                         <p>En renseignant votre adresse email, vous acceptez de recevoir chaque semaine nos derniers articles de blog par courrier électronique et vous prenez connaissance de notre Politique de confidentialité.</p>
                         <label for="email"></label>
-                        <input type="email" name="email" id="emaail">
+                        <input type="email" name="email" id="email" placeholder="Renseignez votre email">
                         <div>
-                            <label for=""></label>
-                            <input type="checkbox" name="check" id="check" placeholder="Renseignez votre email">
+                            <label for="check"></label>
+                            <input required type="checkbox" name="check" id="check">
                             <p>En m'inscrivant à cette newsletter, j'accepte de recevoir des communications email et des offres exclusives de la part de la marque</p>
                         </div>
-                        <a href="#" class="button button--primary">Envoyer</a>
+                        <button type="submit" href="#" class="button--primary">Envoyer</button>
                     </form>
                     <img src="./assets/image_newsletter.png" alt="">
                 </div>
