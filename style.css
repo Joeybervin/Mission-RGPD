@@ -731,43 +731,45 @@ nav#navigation--mobile > img {
     z-index: 2;
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     background-color: var(--primary-color);
-    margin: 0;
     padding: 102px var(--margin-horizontal-mobile) 0 var(--margin-horizontal-mobile);
+    margin: 0;
+    display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
 }
 #test-rgpd > div::after {
     z-index: -1;
     position: absolute;
-    bottom: -183px;
+    bottom: -107px;
     right: -70px;
     content: '';
     background-color: var(--white);
     border-radius: 100%;
-    width: 451px;
-    height: 451px;
+    width: min(451px,42vw);
+    height: min(451px,42vw);
 }
 #test-rgpd > div > div {
+    grid-area: 1 / 1 / 2 / 3;
     max-width: 554px;
 }
 #test-rgpd h2, #test-rgpd p {
     color: var(--white);
 }
 #test-rgpd a {
-    margin: 30px 0 30px 0;
+    margin: 30px 0 100px 0;
     padding-left: 68px;
     padding-right: 68px;
 }
 #test-rgpd img {
+    z-index: 1;
+    grid-area: 1 / 2 / 2 / 3;
+    align-self: end;
+    justify-self: end;
+    width : min(511px, 30vw);
     height: fit-content;
-    align-self: flex-end;
-    margin-top: 28px;
-    min-width: 310px;
-    max-width: 85%;
-    display: block;
-    margin-left: auto;
 }
 
 /* =========================================
@@ -925,7 +927,7 @@ nav#navigation--mobile > img {
     background-color: var(--primary-color);
 }
 #ours-articles h2 {
-    margin: 0 0 50px 111px;
+    margin: 0 0 50px 0;
     color: var(--white);
 }
 #ours-articles .button {
@@ -1113,19 +1115,75 @@ form  button {
             FOOTER
 ================================= */
 footer {
-    padding: 69px 152px 84px 151px;
-    border-radius: 70px 70px 0 0 ;
+    padding: 69px 52px 67px 51px;
+    animation: padding 0.3s ease-in-out;
 }
 footer > div {
     display: flex;
     flex-wrap: wrap;
 }
-footer > div:first-of-type {
-    justify-content: space-between;
+footer a.button {
+    height: fit-content;
 }
-footer > div:nth-of-type(2) {}
-footer > div:nth-of-type(3) {}
-footer > div:last-of-type {}
+footer li, footer a {
+    color: var(--white);
+}
+footer > div:first-of-type {
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    column-gap: 50px;
+    margin-bottom: 69px;
+}
+footer > div:first-of-type  img {
+    width: min(148px, 36vw);
+}
+footer > div:nth-of-type(2) {
+    justify-content: space-between;
+    row-gap: 50px;
+    column-gap: 30px;
+}
+footer > div:nth-of-type(2) > ul {
+    flex-grow: 1;
+}
+footer > div:nth-of-type(2) > ul a {
+    font-size: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+    font-weight: 500;
+    line-height: 18px;
+}
+footer > div:nth-of-type(2) > ul a:hover {
+    text-decoration: underline;
+}
+footer > div:nth-of-type(2) ul li:not(:first-child):not(:last-child) {
+    margin-bottom: 18px;
+}
+footer > div:nth-of-type(2) > ul li:first-of-type, footer > div:nth-of-type(2) > ul:last-of-type a {
+    font-size: clamp(1rem, 0.8929rem + 0.5357vw, 1.375rem);
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+footer > div:nth-of-type(3) {
+    justify-content: center;
+    row-gap: 30px;
+    column-gap: 50px;
+    margin: 50px 0 ;
+}
+footer > div:nth-of-type(3) a:nth-child(3) {
+    padding: 20px 72px 20px 73px;
+}
+footer > div:last-of-type {
+    column-gap: min(60px, 4vw);
+    row-gap: 10px;
+}
+footer > div:last-of-type > a {
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    line-height: normal;
+}
+footer > div:last-of-type > a:hover {
+    text-decoration: underline;
+}
 
 /* -----------------------------------------------------------------------------------------------------
                                     MEDIA QUERIES
@@ -1134,6 +1192,20 @@ footer > div:last-of-type {}
 /* -----------------------------------------------------------------------------------------------------
                                     MEDIUM DEVICES
 ----------------------------------------------------------------------------------------------------- */
+
+@media screen and (min-width: 495px) {
+    /* =====================================
+            FOOTER
+    ======================================== */
+    footer > div:first-of-type {
+        justify-content: space-between;
+    }
+    footer > div:nth-of-type(3) {
+        justify-content: flex-start;
+    }
+    
+}
+
 @media screen and (min-width: 768px) {
 
     /* =====================================
@@ -1177,10 +1249,24 @@ footer > div:last-of-type {}
         padding-bottom: 0;
     }
     /* =========================================
+        SECTION : OURS ARTICLES
+    ============================================ */
+    #ours-articles h2 {
+        margin-left: 111px;
+    }
+    /* =========================================
         SECTION : NEWSLETTER
     ============================================ */
     form {
         margin-left: min(188px, 13vw); 
+    }
+    /* ==============================
+            FOOTER
+    ================================= */
+    footer {
+        padding:  69px min(152px,12vw) 67px min(152px,12vw);
+        border-radius: 70px 70px 0 0 ;
+        animation: border-radius 0.3s ease-in-out;
     }
 
 
@@ -1444,12 +1530,6 @@ footer > div:last-of-type {}
     #customers-testimony > div > div {
         margin: 0 ;
     }
-    
-
-    
-
-    
-    
 
 }
 
@@ -1473,18 +1553,6 @@ footer > div:last-of-type {}
     }
 
     /* =========================================
-        SECTION : Q&A
-    ============================================ */
-    .question__container {
-        max-width: 524px;
-    }
-    .question__container:first-child {
-        max-width: 443px;
-    }
-    .question__container:last-child {
-        max-width: 302px;
-    }
-    /* =========================================
         SECTION : CUSTOMERS TESTIMONY
     ============================================ */
     #customers-testimony h2 {
@@ -1497,12 +1565,23 @@ footer > div:last-of-type {}
         margin-left : 111px;
     }
     /* =========================================
+        SECTION : Q&A
+    ============================================ */
+    .question__container {
+        max-width: 524px;
+    }
+    .question__container:first-child {
+        max-width: 443px;
+    }
+    .question__container:last-child {
+        max-width: 302px;
+    }
+    /* =========================================
         SECTION :  OUR TEAM
     ============================================ */
     #our-team h2 {
         margin-left : 111px;
     }
-
     /* =========================================
         SECTION :  NEWSLETTER
     ============================================ */
@@ -1524,6 +1603,12 @@ footer > div:last-of-type {}
     .nav__logo {
         height: 84px;
         width: 191px;
+    }
+    /* =========================================
+        SECTION : TEST US
+    ============================================ */
+    #test-rgpd img {
+        width : min(511px, 36vw);
     }
 
 
