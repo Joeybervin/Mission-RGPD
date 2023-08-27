@@ -51,11 +51,10 @@ openSubMenu()
 
 /* -----------> MODAL  <-----------*/
 
+let modal = document.querySelector(".modal");
 function placeModal(y) {
     modal.style.top = `${y}px`;
 }
-let modal = document.querySelector(".modal")
-
 /* OPEN modal */
 const openModal = document.querySelectorAll(".team-member").forEach((teamMember) => {
     const imageContainer = teamMember.querySelector('div');
@@ -67,7 +66,6 @@ const openModal = document.querySelectorAll(".team-member").forEach((teamMember)
         noScroll();
     });
 })
-
 /* CLOSE MODAL */
 const closeModal = document.querySelector('.modal__content > div img:first-of-type').addEventListener('click', () => {
     modal.classList.toggle('close');
@@ -75,7 +73,6 @@ const closeModal = document.querySelector('.modal__content > div img:first-of-ty
 });
 
 /* -----------> SLIDER PROGRESS BAR  <-----------*/
-
 
 function ProgressBarWidthGrowth(index, sliderLength) {
     let sliderProgressBar = document.querySelector('.slider-progress-bar');
@@ -96,8 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
         ProgressBarWidthGrowth(sliderIndex, sliderSlides.length)
     }, 100);
 });
-
-
 const disableSlideButton = (index, sidesList) => {
     if (index  > 0 && index < sidesList.length - 1) {
         sliderButtonNext.classList.remove('disabled');
@@ -112,7 +107,6 @@ const disableSlideButton = (index, sidesList) => {
         sliderButtonPrev.classList.add('disabled');
     }
 }
-
 function showSlide(index) {
     sliderSlides.forEach((slide, i) => {
         if (i === index) {
@@ -154,8 +148,6 @@ sliderButtonPrev.addEventListener('click', () => {
     }
 });
 
-
-
 /* -----------> NEWSLETTER  <-----------*/
 
 let newsletterEmailInput = document.getElementById('email');
@@ -167,14 +159,12 @@ function validateEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
 }
-
 function showError(messageLocation, message, inputError) {
     
     messageLocation.innerHTML = message;
     inputError.style.border = "2px solid rgb(255, 51, 51)"
 
 }
-
 /* SUBMIT form newsletter */
 let submitNewsletter = form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -200,3 +190,18 @@ newsletterEmailInput.addEventListener("blur", function() {
     }
 })
 
+/* -----------> ANIME.JS ANIMATION + WAYPOINTS  <-----------*/
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show')
+        }
+        else {
+            entry.target.classList.remove('show')
+        }
+    });
+})
+
+const el = document.querySelector('el');
+el.forEach((el) => observer.observe(el));
