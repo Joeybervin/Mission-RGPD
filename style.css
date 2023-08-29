@@ -45,16 +45,20 @@
             GENERAL
 ================================= */
 
+
+
 html {
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
     color : var(--primary);
+    scroll-behavior: smooth;
 }
 .noScroll {
     overflow-y: hidden;
 }
 body {
+    overflow-x: hidden;
     background-color: #FFFFFF;
     width: 100%;
 }
@@ -137,11 +141,11 @@ button:hover, a.button:hover {
     box-shadow: none;
 }
 
-.button--primary {
+.button--primary, .button--outline-dark:hover{
     background-color: #2F2E41;
     color: var(--white);
 }
-.button--primary:focus, .button--primary:hover {
+.button--primary:focus, .button--primary:hover, .button--outline-dark:focus {
     background-color: #232231 ;
 }
 .button--secondary {
@@ -150,11 +154,11 @@ button:hover, a.button:hover {
 .button--secondary:focus, .button--secondary:hover {
     background-color: var(--secondary-color-variant) ;
 }
-.button--tertiary{
+.button--tertiary, .button--outline-light:hover{
     background-color: #FFFFFF;
     color: var(--primary-color);
 }
-.button--tertiary:focus, .button--tertiary:hover {
+.button--tertiary:focus, .button--tertiary:hover, .button--outline-light:focus {
     background-color: #F4F4F4;
 }
 .button--outline-dark {
@@ -238,7 +242,7 @@ main::before {
     width: 23%;
     height: calc( 4 * 100vh)
 }
-
+/* ======= SECTION ======= */
 section {
     width: 100%;
 }
@@ -248,37 +252,6 @@ section {
     height: fit-content;
 }
 
-/* ======= HEADER ======= */
-header {
-    position: relative;
-    width: 100%;
-    height: fit-content;
-    min-height: 100vh;
-    background-color: var(--primary-color);
-}
-
-/* ======= FOOTER ======= */
-footer {
-    background-color: var(--primary-color);
-    width: 100vw;
-}
-
-/* ======= NAVIGATION ======= */
-nav {
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--nav-height-mobile);
-    background-color: #FFFFFF;
-    font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
-    /* animation A REVOIR */
-    transition: height 0.3s ease, margin 0.3s ease, border-radius 0.4s ease;
-}
-nav ul {
-    list-style: none;
-}
 /* ==============================
             MODAL
 ================================= */
@@ -314,7 +287,7 @@ nav ul {
     padding: 30px 10px 50px 10px;
     background-color: var(--modal-background-color);
 }
-.modal__content > div img:first-of-type {
+.modal__content > div svg:first-of-type {
     position: absolute;
     top : 40px;
     right: 35px;
@@ -323,11 +296,11 @@ nav ul {
     width: 14px;
     border-radius: 50%;
 }
-.modal__content > div img:last-of-type {
+.modal__content > div svg:last-of-type {
     width: 47px;
     margin-left: 10px;
 }
-.modal__content > div img:first-of-type:hover {
+.modal__content > div svg:first-of-type:hover {
     cursor: pointer;
 }
 .modal__content  p:first-of-type {
@@ -348,6 +321,21 @@ nav ul {
 /* ==============================
             NAVIGATION
 ================================= */
+nav {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height-mobile);
+    background-color: #FFFFFF;
+    font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
+    /* animation A REVOIR */
+    transition: height 0.3s ease, margin 0.3s ease, border-radius 0.4s ease;
+}
+nav ul {
+    list-style: none;
+}
 nav#navigation--desktop {
     display: none;
 }
@@ -467,8 +455,12 @@ nav#navigation--mobile > img {
 /* ==============================
             HEADER
 ================================= */
+header {
+    width: 100%;
+    background-color: var(--primary-color);
+}
 .header__container {
-    padding-top: calc(50px + var(--nav-height-mobile));
+    padding-top: calc(min(6.67vw, 96px) + var(--nav-height-desktop));
     margin : 0 20px;
 }
 .header__container  p {
@@ -521,19 +513,21 @@ nav#navigation--mobile > img {
 .header__container--bottom {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding : 25px 0 ;
     margin : 0 auto;
+    column-gap: 18px;
+    row-gap: 25px;
+    height: fit-content;
+    max-width: 90%;
     text-align: center;
-    gap: 20px;
 }
 .header__container--bottom  > div  {
-    max-width: 137px;
-    margin : 0 auto;
-}
-.header__container--bottom  > div:nth-child(2)  {
-    max-width: 100px;
+    flex: 1;
+    min-width: 140px;
+    max-width: fit-content;
 }
 .header__container--bottom  > div p:first-of-type {
     font-size: 20px;
@@ -544,7 +538,8 @@ nav#navigation--mobile > img {
     line-height: 17px;
 }
 .header__container--bottom a {
-    margin : 10px auto;
+    align-self: center;
+    margin: 0 auto;
 }
 /* ==============================
             MAIN
@@ -622,6 +617,7 @@ nav#navigation--mobile > img {
     margin-top: 20px;
     margin-bottom: 27px;
 }
+/* TODO */
 .layer {
     position: absolute;
     top: -57px; 
@@ -688,7 +684,6 @@ nav#navigation--mobile > img {
     position: relative;
     width: fit-content;
     margin: 0 auto;
-    scroll-behavior: smooth;
 }
 #video > div {
     position: relative;
@@ -981,12 +976,13 @@ position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 29px;
+    column-gap: 29px;
+    row-gap: 50px;
 
 }
 article {
+    
     max-width: 303px;
-    min-width: 180px;
 }
 article img {
     display: block;
@@ -1031,19 +1027,22 @@ article .article__excerpt {
     padding : 50px 0 77px 0;
 }
 #our-team h2 {
-    margin : 0 0 50px 111px;
+    margin : 0 0 50px 0;
     line-height: 50px;
 }
 .our-team__container {
     display: flex;
+    justify-content: center;
     gap: min(30px, 3%);
+    flex-wrap: wrap;
+    row-gap: 50px;
 }
 .our-team__container--top {
-    justify-content: flex-end;
     margin-bottom: 50px;
 }
 .our-team__container > div {
     max-width: 303px;
+    
 }
 .our-team__container > div  > div {
     position: relative;
@@ -1146,11 +1145,32 @@ form > div {
     margin-bottom: 10px;
 }
 form  button {
+    position: relative;
     z-index: 3;
     margin-bottom: 90px;
     padding-left: 80px;
     padding-right: 80px;
-    
+}
+form button.animed:before {
+	width: 100%;
+    right: 0;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+form button.animed:hover {
+    cursor: default;
+}
+form button:before {
+	display: block;
+	position: absolute;
+	top: 0;
+    left: 0;
+	height: 100%;
+	width: 0px;
+	z-index: -1;
+	content: '';
+    border-radius: 5px;
+	background: var(--secondary-color);
+	
 }
 #newsletter form + img {
     position: absolute;
@@ -1164,6 +1184,8 @@ form  button {
             FOOTER
 ================================= */
 footer {
+    background-color: var(--primary-color);
+    width: 100vw;
     padding: 69px 51px 84px 51px;
     animation: padding 0.3s ease-in-out;
 }
@@ -1190,8 +1212,9 @@ footer > div:first-of-type  img {
 footer > div:nth-of-type(2) {
     justify-content: space-between;
     row-gap: 50px;
-    column-gap: 35px;
+    column-gap: 14px;
 }
+
 footer > div:nth-of-type(2) > ul a, footer > div:nth-of-type(2) > ul li  {
     font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
     font-weight: 500;
@@ -1208,6 +1231,10 @@ footer > div:nth-of-type(2) > ul li:first-of-type, footer > div:nth-of-type(2) >
     font-weight: 600;
     line-height: normal;
     margin-bottom: 15px;
+}
+footer > div:nth-of-type(2) ul:last-of-type  {
+    margin-right: auto;
+    
 }
 footer > div:nth-of-type(3) {
     justify-content: center;
@@ -1242,18 +1269,58 @@ footer > div:last-of-type > a:hover {
                                     MEDIUM DEVICES
 ----------------------------------------------------------------------------------------------------- */
 
+@media screen and (min-width: 425px) {
+    footer > div:nth-of-type(2) ul  {
+        flex: 1;
+        min-width: 155px;
+        max-width: 155px;
+    }
+}
+
 @media screen and (min-width: 495px) {
+    
     /* =====================================
             FOOTER
     ======================================== */
     footer > div:first-of-type {
         justify-content: space-between;
     }
+
     footer > div:nth-of-type(3) {
         justify-content: flex-start;
     }
 
-    
+}
+
+@media screen and (min-width: 547px) {
+
+    /* =====================================
+            HEADER
+    ======================================== */
+    .header__container--bottom {
+        flex-direction: row;
+    }
+
+    /* =====================================
+            SECTION : OUR TEAM
+    ======================================== */
+    .our-team__container > div {
+        flex: 1;
+    }
+    .our-team__container--top {
+        justify-content: flex-end;
+    }
+    .our-team__container--bottom {
+        justify-content: flex-start;
+    }
+
+    /* =====================================
+            SECTION : OURS ARTICLES
+    ======================================== */
+    article {
+        min-width: 230px;
+        flex: 1;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -1264,11 +1331,22 @@ footer > div:last-of-type > a:hover {
     .modal__content > div {
         width: min(711px, 59.2vw);
     }
-    .modal__content > div img:last-of-type {
+    .modal__content > div svg:last-of-type {
         margin-left: 0;
     }
     footer > div:nth-of-type(3) a {
         flex-grow:initial;
+    }
+
+    /* =====================================
+            HEADER
+    ======================================== */
+    .header__container--bottom {
+        text-align: left;
+    }
+    .header__container--bottom a {
+        align-self: center;
+        margin: 0;
     }
 
     /* =====================================
@@ -1313,6 +1391,12 @@ footer > div:last-of-type > a:hover {
         margin-left: 111px;
     }
     /* =========================================
+        SECTION : OUR TEAM
+    ============================================ */
+    #our-team h2 {
+        margin-left: 111px;
+    }
+    /* =========================================
         SECTION : NEWSLETTER
     ============================================ */
     form {
@@ -1329,15 +1413,46 @@ footer > div:last-of-type > a:hover {
 
 }
 
+@media screen and (min-width: 798px) {
+
+    /* =====================================
+            SECTION : OURS PRETATIONS
+    ======================================== */
+    article {
+        min-width: 300px;
+    }
+    
+}
+
 @media screen and (min-width: 860px) {
 
+    /* =====================================
+            SECTION : OURS PRETATIONS
+    ======================================== */
     #ours-prestations  > div > div:last-child {
         flex-direction: row;
     }
     #ours-prestations  > div > div:last-child > div {
         min-height: 487px;;
     }
+
+    /* ==============================
+            FOOTER
+    ================================= */
+    footer > div:nth-of-type(2) ul  {
+        min-width: fit-content;
+        max-width: fit-content;
+    }
     
+}
+@media screen and (min-width: 945px) {
+    /* ==============================
+            FOOTER
+    ================================= */
+    footer > div:nth-of-type(2) ul:last-of-type  {
+        margin-right: 0;
+        
+    }
 }
 
 /* -----------------------------------------------------------------------------------------------------
@@ -1415,6 +1530,7 @@ footer > div:last-of-type > a:hover {
     nav li {
         display: flex;
         gap: 3px;
+        align-items: center;
     }
     nav li:hover {
         cursor: pointer;
@@ -1530,13 +1646,7 @@ footer > div:last-of-type > a:hover {
     h1 {
         line-height: 50px ;
     }
-    .header__container {
-        position: absolute;
-        padding: 0;
-        margin : 0;
-        bottom: 0;
-        width: 100%;
-    }
+
     .header__container--top {
         gap : 100px;
         flex-wrap: nowrap;
@@ -1603,9 +1713,17 @@ footer > div:last-of-type > a:hover {
 
 }
 
-    /* ==============================
-            1200PX
-================================= */
+@media screen and (min-width: 1098px) {
+    /* ===================================
+            SECTION : OURS ARTICLES
+    ====================================== */
+    article {
+        min-width: 200px;
+    }
+
+    
+}
+
 @media screen and (min-width: 1200px) {
 
     /* ======= BUTTONS ======= */
@@ -1650,12 +1768,6 @@ footer > div:last-of-type > a:hover {
         max-width: 302px;
     }
     /* =========================================
-        SECTION :  OUR TEAM
-    ============================================ */
-    #our-team h2 {
-        margin-left : 111px;
-    }
-    /* =========================================
         SECTION :  NEWSLETTER
     ============================================ */
     #newsletter form + img {
@@ -1664,9 +1776,6 @@ footer > div:last-of-type > a:hover {
     }
 }
 
-    /* ==============================
-            1280PX
-================================= */
 @media screen and (min-width: 1280px) {
 
     /* ======= NAVIGATIONS ======= */
@@ -1687,6 +1796,17 @@ footer > div:last-of-type > a:hover {
 
 
     
+}
+
+@media screen and (min-width: 1500px) {
+
+    /* =========================================
+        HEADER
+    ============================================ */
+    .header__container {
+        padding-top: calc(min(4vw, 96px) + var(--nav-height-desktop));
+        margin : 0 20px;
+    }
 }
 
 /* -----------------------------------------------------------------------------------------------------

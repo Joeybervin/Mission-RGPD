@@ -2,6 +2,7 @@ let submenuOpen = -1;
 let submenuIsOpen = false;
 
 
+
 function noScroll() {
     document.querySelector("html").classList.toggle("noScroll");
 }
@@ -67,7 +68,7 @@ const openModal = document.querySelectorAll(".team-member").forEach((teamMember)
     });
 })
 /* CLOSE MODAL */
-const closeModal = document.querySelector('.modal__content > div img:first-of-type').addEventListener('click', () => {
+const closeModal = document.querySelector('.modal__content > div svg:first-of-type').addEventListener('click', () => {
     modal.classList.toggle('close');
     noScroll();
 });
@@ -78,7 +79,7 @@ function ProgressBarWidthGrowth(index, sliderLength) {
     let sliderProgressBar = document.querySelector('.slider-progress-bar');
     let sliderProgressBarBar = document.querySelector('.slider-progress-bar-bar');
     let progressBarWidth = sliderProgressBar.offsetWidth;
-    sliderProgressBarBar.style.width = `${(index + 1 )* (progressBarWidth / (sliderLength - 1))}px`;
+    sliderProgressBarBar.style.width = `${(index + 1 )* (progressBarWidth / sliderLength)}px`;
 }
 
 /* -----------> SLIDER  <-----------*/
@@ -131,8 +132,8 @@ function slideExitLeft(index) {
 sliderButtonNext.addEventListener('click', () => {
     if (sliderIndex < sliderSlides.length - 1) {
         slideExitLeft(sliderIndex);
-        sliderIndex++;
         disableSlideButton(sliderIndex, "next");
+        sliderIndex++;
         showSlide(sliderIndex);
         ProgressBarWidthGrowth(sliderIndex, sliderSlides.length)
     }
@@ -167,6 +168,8 @@ function showError(messageLocation, message, inputError) {
 }
 /* SUBMIT form newsletter */
 let submitNewsletter = form.addEventListener("submit", (e) => {
+
+    let submitButton = document.querySelector("form button");
     e.preventDefault();
 
     if (!validateEmail(newsletterEmailInput.value)) {
@@ -178,6 +181,9 @@ let submitNewsletter = form.addEventListener("submit", (e) => {
     else {
         /* TODO : */
         /* changer étét bouton */
+        submitButton.innerHTML = 'Envoyé';
+        submitButton.classList.add('animed');
+        submitButton.disabled = true;
         form.reset()
         errorMessage.innerHTML = "";
         newsletterEmailInput.style.border = "none";
@@ -190,18 +196,8 @@ newsletterEmailInput.addEventListener("blur", function() {
     }
 })
 
-/* -----------> ANIME.JS ANIMATION + WAYPOINTS  <-----------*/
+/* -----------> SCROLL ANIMATIONS <-----------*/
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show')
-        }
-        else {
-            entry.target.classList.remove('show')
-        }
-    });
-})
+/* ScrollReaveal */
 
-const el = document.querySelector('el');
-el.forEach((el) => observer.observe(el));
+
