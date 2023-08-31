@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
     <title>Mission RGPD - Commencez dès aujourd’hui votre mise en conformité RGPD</title>
+    <!-- Icon -->
+    <link rel="icon" type="image/png" href="./assets/rgpd-crop-logo.png">
+
     <!-- reset (minireset) + style)-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css"> 
     <link rel="stylesheet" href="./style.css">
-        
+
     <!-- Font (GOOGLE FONT : montserrat) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Icon -->
-    <link rel="icon" type="image/png" href="./assets/rgpd-logo.png">
-    
 
 </head>
 <body>
@@ -340,7 +340,7 @@
                 </div>
 
                 <!-- SUBMENU(S) -->
-                <div class="submenu-mobile submenu-mobile-0 close">
+                <div class="close-submenu submenu-mobile submenu-mobile-0 ">
                     <!-- go back to the menu principal -->
                     <div class="go-back">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
@@ -380,7 +380,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="submenu-mobile submenu-mobile-1 close">
+                <div class=" close-submenu submenu-mobile submenu-mobile-1">
                     <!-- go back to the menu principal -->
                     <div class="go-back">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
@@ -408,7 +408,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="submenu-mobile submenu-mobile-2 close">
+                <div class="close-submenu submenu-mobile submenu-mobile-2">
                     <!-- go back to the menu principal -->
                     <div class="go-back">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
@@ -433,7 +433,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="submenu-mobile submenu-mobile-3 close">
+                <div class="close-submenu submenu-mobile submenu-mobile-3">
                     <!-- go back to the menu principal -->
                     <div class="go-back">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
@@ -463,25 +463,27 @@
             <!-- PART : header content -->
             <div class="header__container">
                 
-                <div class="header__container--top">
-                    <!-- LEFT side -->
-                    <div class="header__container--top-left">
-                        <h1>Commencez dès aujourd’hui votre mise en conformité RGPD</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <div>
-                            <a href="#" class="button button--secondary">Calculer mon score RGPD</a>
+                <div>
+                    <div class="header__container--top">
+                        <!-- LEFT side -->
+                        <div class="header__container--top-left">
+                            <h1 class="coco">Commencez dès aujourd’hui votre mise en conformité RGPD</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             <div>
-                                <a href="#video">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                        <path d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19ZM6 6.81797C6 6.48677 6.09138 6.16198 6.26409 5.87936C6.78247 5.03111 7.89035 4.76369 8.73861 5.28207L14.2248 8.63475C14.4414 8.76711 14.6234 8.94909 14.7557 9.16568C15.2165 9.91969 14.9788 10.9045 14.2248 11.3653L8.73861 14.7179C8.456 14.8906 8.13121 14.982 7.8 14.982C6.80589 14.982 6 14.1761 6 13.182V6.81797ZM7 6.81797V13.182C7 13.6239 7.35817 13.982 7.8 13.982C7.9472 13.982 8.09155 13.9414 8.21716 13.8647L13.7034 10.512C13.9861 10.3392 14.0753 9.96988 13.9025 9.68713C13.8528 9.60591 13.7846 9.53766 13.7034 9.48803L8.21716 6.13535C7.84016 5.90496 7.34777 6.02381 7.11737 6.40081C7.04062 6.52642 7 6.67077 7 6.81797Z" fill="white"/>
-                                    </svg>
-                                    <p>Regarder la vidéo</p>
-                                </a>
+                                <a href="#" class="button button--secondary">Calculer mon score RGPD</a>
+                                <div>
+                                    <a href="#video">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19ZM6 6.81797C6 6.48677 6.09138 6.16198 6.26409 5.87936C6.78247 5.03111 7.89035 4.76369 8.73861 5.28207L14.2248 8.63475C14.4414 8.76711 14.6234 8.94909 14.7557 9.16568C15.2165 9.91969 14.9788 10.9045 14.2248 11.3653L8.73861 14.7179C8.456 14.8906 8.13121 14.982 7.8 14.982C6.80589 14.982 6 14.1761 6 13.182V6.81797ZM7 6.81797V13.182C7 13.6239 7.35817 13.982 7.8 13.982C7.9472 13.982 8.09155 13.9414 8.21716 13.8647L13.7034 10.512C13.9861 10.3392 14.0753 9.96988 13.9025 9.68713C13.8528 9.60591 13.7846 9.53766 13.7034 9.48803L8.21716 6.13535C7.84016 5.90496 7.34777 6.02381 7.11737 6.40081C7.04062 6.52642 7 6.67077 7 6.81797Z" fill="white"/>
+                                        </svg>
+                                        <p>Regarder la vidéo</p>
+                                    </a>
+                                </div>
                             </div>
                         </div>
+                        <!-- RIGHT side -->
+                        <img src="./assets/image_header.svg" alt="">
                     </div>
-                    <!-- RIGHT side -->
-                    <img src="./assets/image_header.svg" alt="">
                 </div>
 
                 <div class="header__container--bottom">
@@ -499,6 +501,7 @@
                     </div>
                     <a href="#" class="button button--secondary">Demander une démo</a>
                 </div>
+
             </div>
             
         </header>
@@ -509,20 +512,19 @@
                 <div class="section__container">
                     <div>
                         <!-- title -->
-                        <h2 data-sr class="title__h2">Nos prestations pensées <span>pour vous</span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <h2 class="gs_reveal gs_reveal_fadeInUp" >Nos prestations pensées <span>pour vous</span></h2>
+                        <p class="gs_reveal gs_reveal_fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                     <div>
-                        <div>
-                            <!-- TODO : change name -->
+                        <div class="gs_reveal gs_reveal_fadeInUp delay-0.1">
                             <div>
-                                <img class="layer" src="./assets/Layer_1.png" alt="">
+                                <img class="layer" src="./assets/icon__prestation-1.png" alt="">
                             </div>
                             <h3>Une solution clé en main pour une mise en conformité rapide</h3>
                             <p>Nous avons tout prévu pour faciliter votre quotidien et vous faire gagner du temps : notre plateforme est simple d’utilisation et pré-remplie. Vous pourrez notamment y compléter en quelques heures une cartographie de l’ensemble de vos données personnelles et de leur traitement et y retrouvez nos fiches et supports pratiques.</p>
                             <a href="#" class="button button--primary">Découvrir notre solution</a>
                         </div>
-                        <div>
+                        <div class="gs_reveal gs_reveal_fadeInUp delay-0.4">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="70" height="71" viewBox="0 0 70 71" fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M49 19.5003C49 22.195 50.4068 24 52.5 24C54.5932 24 56 22.1921 56 19.5003C56 16.8085 54.5932 15 52.5 15C50.4068 15 49 16.8056 49 19.5003ZM50.0526 19.5003C50.0526 17.9614 50.6937 16.1645 52.5 16.1645C54.3058 16.1645 54.9474 17.9614 54.9474 19.5003C54.9474 21.0392 54.3063 22.8355 52.5 22.8355C50.6937 22.8355 50.0526 21.0392 50.0526 19.5003Z" fill="#1FECA5"/>
@@ -539,7 +541,7 @@
                             <p>Nous avons tout prévu pour faciliter votre quotidien et vous faire gagner du temps : notre plateforme est simple d’utilisation et pré-remplie. Vous pourrez notamment y compléter en quelques heures une cartographie de l’ensemble de vos données personnelles et de leur traitement et y retrouvez nos fiches et supports pratiques.</p>
                             <a href="#" class="button button--tertiary">Découvrir notre solution</a>
                         </div>
-                        <div>
+                        <div class="gs_reveal gs_reveal_fadeInUp delay-0.6">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="70" height="71" viewBox="0 0 70 71" fill="none">
                                     <mask id="path-2-inside-1_2_1475" fill="white">
@@ -566,19 +568,19 @@
                 <div class="section__container">
                     <div>
                         <!-- section title -->
-                        <h2>Mission RGPD <br><span>c'est quoi ?</span></h2>
+                        <h2 class="gs_reveal gs_reveal_fadeInUp">Mission RGPD <br><span>c'est quoi ?</span></h2>
                         <ul>
-                            <li><span>Un outil complet</span> pour votre mise en conformité RGPD</li>
-                            <li><span>Un accès à l’ensemble des 7 étapes automatisées</span> pour vous mettre en conformité</li>
-                            <li>Des <span>notifications périodiques automatiques</span> pour vous alerter des actions à mener</li>
-                            <li>Une traçabilité des actions mises en place</li>
-                            <li>Un suivi dans le temps</li>
-                            <li>Une <span>maintenance technique et SAV</span></li>
+                            <li class="gs_reveal gs_reveal_fadeInFromLeft"><span>Un outil complet</span> pour votre mise en conformité RGPD</li>
+                            <li class="gs_reveal gs_reveal_fadeInFromLeft"><span>Un accès à l’ensemble des 7 étapes automatisées</span> pour vous mettre en conformité</li>
+                            <li class="gs_reveal gs_reveal_fadeInFromLeft">Des <span>notifications périodiques automatiques</span> pour vous alerter des actions à mener</li>
+                            <li class="gs_reveal gs_reveal_fadeInFromLeft">Une traçabilité des actions mises en place</li>
+                            <li class="gs_reveal gs_reveal_fadeInFromLeft">Un suivi dans le temps</li>
+                            <li class="gs_reveal gs_reveal_fadeInFromLeft">Une <span>maintenance technique et SAV</span></li>
                         </ul>
-                        <a href="#" class="button button--primary">Découvrir notre solution</a>
-                        <img src="./assets/image_what_are_we.svg" alt="">
+                        <a href="#" class="button button--primary gs_reveal gs_reveal_fadeInFromLeft">Découvrir notre solution</a>
+                        <img class="gs_reveal" src="./assets/image_what_are_we.svg" alt="">
                     </div>
-                    <div>
+                    <div class="gs_reveal gs_reveal_fadeInFromRight">
                         <img src="./assets/image_1.jpg" alt="Un homme devant son ordinateur au téléphone.">
                     </div>
                     
@@ -600,23 +602,22 @@
             <!-- PART : TEST RGPD -->
             <section id="test-rgpd">
                 <div class="section__container">
-                    <div>
+                    <div class="gs_reveal gs_reveal_fadeInFromLeft">
                         <h2>Testez Mission RGPD <br> grâce à notre <span>essai gratuit</span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-                        <a href="#" class="button button--tertiary">Essai gratuit</a>
+                        <p class="fade-in-from-left delay-1000">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        <a href="#" class="button button--tertiary fade-in-from-left delay-400">Essai gratuit</a>
                     </div>
-                    <img src="./assets/image_test_us.svg" alt="">
+                    <img  class="gs_reveal gs_reveal_fadeInFromRight delay-0.3" src="./assets/image_test_us.svg" alt="">
 
                 </div>
             </section>
 
             <!-- PART : CUSTOMERS TESTIMONY -->
-            <!-- TODO : slider -->
             <section id="customers-testimony">
                 <div class="section__container">
                     <!-- left side -->
-                    <h2>Nos clients <br> témoignent</h2>
-                    <img src="./assets/image_our_customers_testify.png" alt="">
+                    <h2 class="gs_reveal gs_reveal_fadeInFromLeft">Nos clients <br> témoignent</h2>
+                    <img class="gs_reveal gs_reveal_fadeInFromLeft" src="./assets/image_our_customers_testify.png" alt="">
                     <!-- slider -->
                     <div class="slider__container">
                         <div id="slider">
@@ -706,7 +707,7 @@
             <!-- PART : Q&A -->
             <section id="questions-answers">
                 <div class="section__container">
-                    <h2>Une question sur le RGPD ?</h2>
+                    <h2 class="gs_reveal gs_reveal_fadeInDown gs_reveal delay-0.10">Une question sur le RGPD ?</h2>
                     <div>
                         <div class="question__container">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ?</p>
@@ -718,7 +719,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="question__container">
+                        <div class="question__container gs_reveal delay-0.15">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam ?</p>
                             <div>
                                 <a href="#">Lire la réponse</a>
@@ -728,7 +729,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="question__container">
+                        <div class="question__container gs_reveal delay-0.2">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ?</p>
                             <div>
                                 <a href="#">Lire la réponse</a>
@@ -741,17 +742,17 @@
                     </div>
                     <div>
                         <a href="#" class="button button--primary">Découvrir toutes les questions</a>
-                        <img src="./assets/image_q&a.svg" alt="">
+                        <img class="fade-in-from-right" src="./assets/image_q&a.svg" alt="">
                     </div>
                     
 
                 </div>
             </section>
 
-            <!-- PART :  -->
+            <!-- PART : OUR ARTICLES -->
             <section id="ours-articles">
                 <div class="section__container">
-                    <h2>Découvrez nos derniers<br>articles sur le RGPD</h2>
+                    <h2 class="gs_reveal gs_reveal_fadeInUp">Découvrez nos derniers<br>articles sur le RGPD</h2>
                     <div>
                         <article>
                             <a href="#">
@@ -813,23 +814,23 @@
             <!-- PART : OUR TEAM  -->
             <section id="our-team">
                 <div class="section__container">
-                    <h2>Notre équipe <span>d'experts</span></h2>
+                    <h2 class="gs_reveal gs_reveal_fadeInUp">Notre équipe <span>d'experts</span></h2>
                     <div class="our-team__container our-team__container--top">
-                        <div class="team-member">
+                        <div class="team-member gs_reveal gs_reveal_fadeInFromLeft delay-0.8">
                             <div>
                                 <img src="./assets/team_member_1.png" alt="Nom Prénom - Nom du poste">
                             </div>
                             <p>Nom Prénom</p>
                             <p>Nom du poste</p>
                         </div>
-                        <div class="team-member">
+                        <div class="team-member gs_reveal gs_reveal_fadeInFromLeft delay-0.4">
                             <div>
                                 <img src="./assets/team_member_2.png" alt="Nom Prénom - Nom du poste">
                             </div>
                             <p>Nom Prénom</p>
                             <p>Nom du poste</p>
                         </div>
-                        <div class="team-member">
+                        <div class="team-member gs_reveal gs_reveal_fadeInFromLeft">
                             <div>
                                 <img src="./assets/team_member_3.png" alt="Nom Prénom - Nom du poste">
                             </div>
@@ -838,21 +839,21 @@
                         </div>
                     </div>
                     <div class="our-team__container our-team__container--bottom">
-                        <div class="team-member">
+                        <div class="team-member gs_reveal gs_reveal_fadeInFromRight ">
                             <div>
                                 <img src="./assets/team_member_6.png" alt="Nom Prénom - Nom du poste">
                             </div>
                             <p>Nom Prénom</p>
                             <p>Nom du poste</p>
                         </div>
-                        <div class="team-member">
+                        <div class="team-member gs_reveal gs_reveal_fadeInFromRight delay-0.4">
                             <div>
                                 <img src="./assets/team_member_5.png" alt="Nom Prénom - Nom du poste">
                             </div>
                             <p>Nom Prénom</p>
                             <p>Nom du poste</p>
                         </div>
-                        <div class="team-member">
+                        <div class="team-member gs_reveal gs_reveal_fadeInFromRight delay-0.6">
                             <div>
                                 <img src="./assets/team_member_4.png" alt="Nom Prénom - Nom du poste">
                             </div>
@@ -867,9 +868,9 @@
             <section id="newsletter">
                 <div class="section__container">
                     <form action="#" method="post">
-                        <h2>Inscrivez-vous <span>à notre newsletter.</span></h2>
+                        <h2 class="gs_reveal gs_reveal_fadeInUp">Inscrivez-vous <span>à notre newsletter.</span></h2>
                         <p>En renseignant votre adresse email, vous acceptez de recevoir chaque semaine nos derniers articles de blog par courrier électronique et vous prenez connaissance de notre Politique de confidentialité.</p>
-                        <input type="email" name="email" id="email" placeholder="Renseignez votre email" aria-label="Adresse email">
+                        <input type="email" name="email" id="email" autocomplete="email" placeholder="Renseignez votre email" aria-label="Adresse email">
                         <div>
                             <input type="checkbox" name="conditions" id="conditions"  aria-label="Accepter les conditions d'inscription">
                             <label for="conditions">En m'inscrivant à cette newsletter, j'accepte de recevoir des communications email et des offres exclusives de la part de la marque</label>
@@ -877,7 +878,7 @@
                         <p class="error-message"></p>
                         <button type="submit" href="#" class="button--primary">Envoyer</button>
                     </form>
-                    <img src="./assets/image_newsletter.png" alt="">
+                    <img class="fade-in-from-right" src="./assets/image_newsletter.png" alt="">
                 </div>
             </section>
         </main>
@@ -889,8 +890,13 @@
                 <a href="#" class="button button--secondary">Demander une démo</a>
             </div>
             <div>
-                <ul>
-                    <li>Solutions</li>
+                <ul class="inactive">
+                    <li>
+                        <p>Solutions</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="13" viewBox="0 0 25 13" fill="none">
+                            <path d="M1 1L12.5 11L24 1" stroke="#00EA99" stroke-width="2"/>
+                        </svg>
+                    </li>
                     <li><a href="#">Centre de formations</a></li>
                     <li><a href="#">Experts comptables</a></li>
                     <li><a href="#">Campings</a></li>
@@ -900,23 +906,38 @@
                     <li><a href="#">Ressources Humaines</a></li>
                     <li><a href="#">Conseil</a></li>
                 </ul>
-                <ul>
-                    <li>Services</li>
+                <ul class="inactive">
+                    <li>
+                        <p>Services</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="13" viewBox="0 0 25 13" fill="none">
+                            <path d="M1 1L12.5 11L24 1" stroke="#00EA99" stroke-width="2"/>
+                        </svg>
+                    </li>
                     <li><a href="#">Accompagnment</a></li>
                     <li><a href="#">Formations OPCO</a></li>
                     <li><a href="#">Assistance DPO</a></li>
                     <li><a href="#">Obtention du label RGPD engagé</a></li>
                     <li><a href="#">Audit site internet</a></li>
                 </ul>
-                <ul>
-                    <li>Entreprise</li>
+                <ul class="inactive">
+                    <li>
+                        <p>Entreprise</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="13" viewBox="0 0 25 13" fill="none">
+                            <path d="M1 1L12.5 11L24 1" stroke="#00EA99" stroke-width="2"/>
+                        </svg>
+                    </li>
                     <li><a href="#">Qui sommes-nous ?</a></li>
                     <li><a href="#">Devenir partenaire</a></li>
                     <li><a href="#">Recrutement</a></li>
                     <li><a href="#">Nos clients</a></li>
                 </ul>
-                <ul>
-                    <li>Ressources</li>
+                <ul class="inactive">
+                    <li>
+                        <p>Ressources</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="13" viewBox="0 0 25 13" fill="none">
+                            <path d="M1 1L12.5 11L24 1" stroke="#00EA99" stroke-width="2"/>
+                        </svg>
+                    </li>
                     <li><a href="#">Livres blanc</a></li>
                     <li><a href="#">Webinaires</a></li>
                     <li><a href="#">Fiches pratiques</a></li>
@@ -939,24 +960,12 @@
                 <a href="#">Mise en conformité RGPD</a>
             </div>
         </footer>
+
     </div>
-
+    <!-- lib -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <!-- script -->
-    <!-- lib : scroll reveal -->
-    <script  src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-    
-    <script  >
-    const sr = ScrollReveal({
-        duration: 2500, 
-        easing: 'ease-in-out', 
-    });
-
-    sr.reveal('h2', {
-        origin: 'bottom', // Point d'origine de l'animation
-        // Autres options spécifiques à cet élément
-    });
-    </script>
     <script type="text/javascript" src="./script.js"></script>
-    
 </body>
 </html>
