@@ -2,7 +2,6 @@ let submenuOpen = -1;
 let submenuIsOpen = false;
 
 
-
 function noScroll() {
     document.querySelector("html").classList.toggle("noScroll");
 }
@@ -166,7 +165,8 @@ function validateEmail(email) {
 function showError(messageLocation, message, inputError) {
 
     messageLocation.innerHTML = message;
-    inputError.style.border = "2px solid rgb(255, 51, 51)"
+    inputError.style.border = "2px solid rgb(255, 51, 51)";
+    inputError.style.animation = "1s linear wiggle";
 
 }
 /* SUBMIT form newsletter */
@@ -201,6 +201,7 @@ newsletterEmailInput.addEventListener("blur", function () {
 
 /* -----------> FOOTER <-----------*/
 
+/* open dropdown navigation menu from the footer */
 let openDropdownMenu = document.querySelectorAll(".inactive").forEach((element) => {
     element.addEventListener('click', function () {
         element.classList.toggle('inactive')
@@ -208,68 +209,11 @@ let openDropdownMenu = document.querySelectorAll(".inactive").forEach((element) 
     })
 })
 
-
 /* -----------> SCROLL ANIMATIONS <-----------*/
-
-/* let fadeInUpAnimation = document.querySelectorAll(".fade-in-up");
-let fadeInDownAnimation = document.querySelectorAll(".fade-in-down");
-let fadeInFromRightAnimation = document.querySelectorAll(".fade-in-from-right");
-let fadeInFromLeftAnimation = document.querySelectorAll(".fade-in-from-left");
-
-function extractDelayFromClass(element) {
-    let elClassNames = element.classList;
-    let elClassNameArray = Object.values(elClassNames)
-    let elDelayClassName = elClassNameArray.find((className) => className.match(/delay-(\d+)/))
-
-    if (elDelayClassName === undefined) {
-        return "0"
-    }
-    else {
-        return elDelayClassName.substring(6)
-
-    }
-
-}
-
-function activateAnimations(elToAnimate) {
-
-    for (let i = 0; i < elToAnimate.length; i++) {
-        let windowHeight = window.innerHeight;
-        let elementTop = elToAnimate[i].getBoundingClientRect().top;
-        let elementVisible = 50;
-        let delay = extractDelayFromClass(elToAnimate[i]);
-
-        if (delay > 0) {
-            elToAnimate[i].style.transitionDelay = `${extractDelayFromClass(elToAnimate[i])}ms`;
-        }
-
-        if (elementTop < windowHeight - elementVisible) {
-            elToAnimate[i].classList.add("active");
-        } else {
-            elToAnimate[i].classList.remove("active");
-        }
-    }
-}
-
-let animationsToActivate = [fadeInUpAnimation, fadeInDownAnimation, fadeInFromLeftAnimation, fadeInFromRightAnimation]
-
-if (window.innerWidth >= 1200) {
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-        window.addEventListener("scroll", () => {
-            animationsToActivate.forEach((animation) => {
-                activateAnimations(animation);
-            })
-        });
-    });
-    
-
-} */
-
 
 /* GSAPS SCROLLTRIGGER */
 
+/* get the animation deelay from the element class */
 function extractDelayFromClass(element) {
     let elClassNames = element.classList;
     let elClassNameArray = Object.values(elClassNames)
@@ -284,9 +228,9 @@ function extractDelayFromClass(element) {
     }
 
 }
-
+/* hide elemnent before the animation begin */
 function hide(elem) {
-    gsap.set(elem, { duration: 1.25,opacity: 0 });
+    gsap.set(elem, { duration: 1.25, opacity: 0 });
 }
 
 function animateElements(element, direction) {
@@ -295,14 +239,14 @@ function animateElements(element, direction) {
     let x = 0;
     let y = direction * 0;
     let delay = extractDelayFromClass(element);
-    
+
     let className = element.className
 
     if (className.includes("fadeInUp")) {
-        y = 100 ;
+        y = 100;
     }
     else if (className.includes("fadeInDown")) {
-        y = -50 ;
+        y = -50;
     }
     else if (className.includes("fadeInFromLeft")) {
         x = -300
@@ -321,19 +265,17 @@ function animateElements(element, direction) {
             ease: "ease-in-out",
             opacity: 1,
             delay: delay,
-            
         }
     );
-    
-}
 
+}
 
 document.addEventListener("DOMContentLoaded", function () {
 
     gsap.registerPlugin(ScrollTrigger);
 
     ScrollTrigger.matchMedia({
-        "(min-width: 768px)": function() {
+        "(min-width: 768px)": function () {
             gsap.utils.toArray(".gs_reveal").forEach(function (el) {
 
                 hide(el);
@@ -342,29 +284,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 ScrollTrigger.create({
                     trigger: el,
-                    start : "top+=200px bottom+=100px",
+                    start: "top+=200px bottom+=100px",
                     end: "bottom+=50px top+=150px",
-                    markers: true,
+                    markers: false,
                     scrub: 0.5,
-                    
+
                     onEnter: function () {
                         if (!animated) {
                             animateElements(el);
                             animated = true;
-                        }},
+                        }
+                    },
                     onEnterBack: function () {
-                            if (animated && !exitedViewOnce) {
-                                animateElements(el, -1);
-                                exitedViewOnce = true;
-                            }
-                        },
-                        
+                        if (animated && !exitedViewOnce) {
+                            animateElements(el, -1);
+                            exitedViewOnce = true;
+                        }
+                    },
+
                 });
             });
         }
     })
 
-    ScrollTrigger.refresh(true);
-    
+
+
 });
 

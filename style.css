@@ -36,7 +36,153 @@
                                     ANIMATION CONTROL
 ----------------------------------------------------------------------------------------------------- */
 
+/* ______ INPUT ANIMATIONS ______ */
+@keyframes wiggle {
+    0%, 7% {
+        transform: rotateZ(0);
+    }
+    15% {
+        transform: rotateZ(-15deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+    }
+    25% {
+        transform: rotateZ(-10deg);
+    }
+    30% {
+        transform: rotateZ(6deg);
+    }
+    35% {
+        transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+        transform: rotateZ(0);
+    }
+}
 
+/* ______ SVG ANIMATIONS ______ */
+@keyframes greenDiagAnime {
+    0%  {
+        stroke: #00EA984B;
+        stroke-dashoffset: 310;
+        fill: transparent;
+        opacity: 1;
+    }
+    25% {
+        stroke: #00EA989D;
+        stroke-dashoffset: 0;
+        fill: transparent;
+        opacity: 1;
+    }
+    50% {
+        stroke: #00EA99;
+        stroke-dashoffset: 0;
+        transform: translateX(40px);
+        fill: #00EA99;
+        opacity: 1;
+
+    }
+    75% {
+        stroke: #00EA99;
+        stroke-dashoffset: 0;
+        fill: #00EA99;
+        opacity: 1;
+    }
+    100% {
+        stroke: #00EA99;
+        stroke-dashoffset: 0;
+        transform: translateX(0);
+        fill: #00EA99;
+        opacity: 1;
+    }
+}
+@keyframes whiteDiagAnime {
+    0%  {
+        stroke: #FFFFFF;
+        stroke-dashoffset: 310;
+        fill: transparent;
+        opacity: 1;
+    }
+    25% {
+        stroke: #FFFFFF;
+        stroke-dashoffset: 0;
+        fill: transparent;
+        opacity: 1;
+    }
+    50% {
+        stroke: #FFFFFF;
+        stroke-dashoffset: 0;
+        transform: translateX(20px);
+        fill: #FFFFFF;
+        opacity: 1;
+
+    }
+    75% {
+        stroke: #FFFFFF;
+        stroke-dashoffset: 0;
+        transform: translateX(20px);
+        fill: #FFFFFF;
+        opacity: 1;
+    }
+    100% {
+        stroke: #FFFFFF;
+        stroke-dashoffset: 0;
+        transform: translateX(0);
+        fill: #FFFFFF;
+        opacity: 1;
+    }
+}
+@keyframes opacity {
+    0% {
+        fill-opacity: 0;
+    }
+    100% {
+        fill-opacity: 1;
+    }
+}
+@keyframes svgStrokeAndFillAnimation {
+    0% {
+        stroke: #E6E6E64D;
+        stroke-dashoffset: 910;
+        fill-opacity: 0;
+    }
+    20% {
+        stroke: #E6E6E670;
+        fill-opacity: 0;
+    }
+    40% {
+        stroke: #E6E6E670;
+        stroke-dashoffset: 0;
+        fill-opacity: 0;
+    }
+    70% {
+        stroke: var(--primary-color);
+    }
+    100% {
+        stroke: #E6E6E600;
+        stroke-dashoffset: 0;
+        fill-opacity: 1;
+    }
+}
+
+/* ______ HEADER ANIMATIONS ______ */
+@keyframes textReveal {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes textFromBottom {
+    0% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 /* -----------------------------------------------------------------------------------------------------
                                     GENERAL CONTENT
 ----------------------------------------------------------------------------------------------------- */
@@ -44,8 +190,6 @@
 /* ==============================
             GENERAL
 ================================= */
-
-
 
 html {
     overflow-x: hidden;
@@ -211,9 +355,6 @@ input {
     width: min(391px, 77vw);
     padding: 18px 0 18px 20px;
 }
-input .error {
-    border: 1px solid var(--error);
-}
 input:focus, input:active {
     border: 2px solid #2F2E41;
 }
@@ -276,6 +417,10 @@ section {
     max-height: calc(100vh - 50px);
     overflow-y: auto;
 }
+.modal__content::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+}
 .modal__content  p {
     color: var(--black);
 }
@@ -294,6 +439,7 @@ section {
     background-color: #F0F0F080;
     padding: 2px;
     width: 14px;
+    height: 14px;
     border-radius: 50%;
 }
 .modal__content > div svg:last-of-type {
@@ -464,8 +610,7 @@ header {
     background-color: var(--primary-color);
 }
 .header__container {
-    padding-top: calc(min(6.67vw, 96px) + var(--nav-height-desktop));
-    
+    padding-top: calc(min(10.67vh, 96px) + var(--nav-height-desktop));
     max-width: 100%;
 }
 .header__container > div {
@@ -482,8 +627,16 @@ header {
     width: 100vw;
     background-color: #FFFFFF;
 }
+header h1 {
+    opacity: 0;
+    animation: 1s ease-in forwards textReveal;
+}
 .header__container  p {
     color: var(--white);
+}
+h1 + p {
+    opacity: 0;
+    animation: 1s ease-in forwards textReveal .5s;
 }
 .header__container--top {
     max-height: max-content;
@@ -493,10 +646,11 @@ header {
     justify-content: center;
     margin: 0 var(--margin-horizontal-mobile);
 }
-.header__container--top > img {
+.header__container--top > svg {
     min-width: 200px;
     max-width: 45%;
     height: fit-content;
+    max-height: 417px;
     align-self: flex-end;
 
 }
@@ -510,6 +664,8 @@ header {
     justify-content: center;
     align-items: center;
     gap: 15px;
+    opacity: 0;
+    animation: 1s ease-in forwards textReveal 0.9s;
 }
 .header__container--top-left > p {
     margin-bottom: 30px;
@@ -535,6 +691,9 @@ header {
     height: fit-content;
     max-width: 90%;
     text-align: center;
+    transform: translateY(50%);
+    opacity: 0;
+    animation: 1s ease-in forwards textReveal, .5s ease-in forwards textFromBottom;
 }
 .header__container--bottom  > div  {
     flex: 1;
@@ -553,6 +712,43 @@ header {
     align-self: center;
     margin: 0 auto;
 }
+/* SVG -> ANIMATION */
+path.header__path {
+    fill-opacity: 0;
+    stroke-dasharray: 910;
+    stroke-dashoffset: 910;
+    animation: 3s ease-in forwards svgStrokeAndFillAnimation;
+}
+#header__svg path#diag-w, #header__svg path#diag-g {
+    opacity: 0;
+    stroke-dasharray: 310;
+    stroke-dashoffset: 310;
+    transform-origin: top center ;
+    animation: 2s ease-in forwards whiteDiagAnime 2s;
+}
+#header__svg path#diag-g {
+    animation: 2s ease-in forwards greenDiagAnime 4s;
+}
+path#branch-top, path#branch-bottom {
+    fill-opacity: 0;
+    animation: 1s ease-in forwards opacity 5s;
+}
+path#circle-bottom, path#check-bottom  {
+    fill-opacity: 0;
+    animation: 1s ease-in forwards opacity 6s;
+}
+path#branch-top {
+    animation: 1s ease-in forwards opacity 6.5s;
+}
+path#circle-top , path#check-top {
+    fill-opacity: 0;
+    animation: 1s ease-in forwards opacity 7s;
+}
+path#circle-center, path#check-center{
+    fill-opacity: 0;
+    animation: 1s ease-in forwards opacity 7.8s;
+}
+
 /* ==============================
             MAIN
 ================================= */
@@ -689,6 +885,7 @@ header {
     max-width: 100%;
     height: 100%;
 }
+
 /* =====================================
         SECTION : VIDEO
 ======================================== */
@@ -1193,6 +1390,7 @@ form button:before {
     width : min(459px, 28vw);
     height: fit-content;
 }
+
 /* ==============================
             FOOTER
 ================================= */
